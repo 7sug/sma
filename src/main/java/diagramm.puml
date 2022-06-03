@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+'file.txt -- MovingAveragesApp
+abstract Filter
+SMA ..> CalculationSMA
+SMA ..> DataInput
+SMA : main()
+SMA : MAwindow()
+CalculationSMA --> Filter
+CalculationSMA : calc()
+SMA ..> MedianFilter
+MedianFilter --> Filter
+MedianFilter : calc()
+Filter <.. DataInput
+DataInput : fileReader()
+
+@enduml
